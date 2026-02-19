@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Pedido Muito Importante</title>
+
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #ffe6f2;
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 32px;
+        color: #ff3399;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    #sim {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #nao {
+        background-color: #ff4d4d;
+        color: white;
+        position: absolute;
+    }
+
+    img {
+        width: 300px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Você quer ser minha amiga pra sempre? 🥺</h1>
+
+<button id="sim">Sim 💖</button>
+<button id="nao">Não 😢</button>
+
+<script>
+    const botaoNao = document.getElementById("nao");
+
+    botaoNao.addEventListener("mouseover", function() {
+        const larguraJanela = window.innerWidth - 100;
+        const alturaJanela = window.innerHeight - 100;
+
+        const novaPosicaoX = Math.random() * larguraJanela;
+        const novaPosicaoY = Math.random() * alturaJanela;
+
+        botaoNao.style.left = novaPosicaoX + "px";
+        botaoNao.style.top = novaPosicaoY + "px";
+    });
+
+    document.getElementById("sim").addEventListener("click", function() {
+        document.body.innerHTML = `
+            <h1>Acho bom 😼💞</h1>
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Gatinhos abraçados">
+        `;
+    });
+</script>
+
+</body>
+</html>
